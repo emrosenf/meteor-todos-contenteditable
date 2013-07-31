@@ -224,9 +224,8 @@ Template.todo_item.events({
 
   'blur .todo-text': function (evt) {
     var value = $(evt.target).text().trim();
-    if (this.name != value) {
+    if (this.text != value) {
       Todos.update(this._id, {$set: {text: value}});
-      Session.set('editing_listname', null);
     }
   },
 
